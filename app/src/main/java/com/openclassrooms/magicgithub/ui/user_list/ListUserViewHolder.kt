@@ -8,6 +8,8 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
 import com.openclassrooms.magicgithub.R
+import com.openclassrooms.magicgithub.databinding.ActivityListUserBinding
+import com.openclassrooms.magicgithub.databinding.ItemListUserBinding
 import com.openclassrooms.magicgithub.model.User
 
 class ListUserViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
@@ -22,7 +24,7 @@ class ListUserViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
             .apply(RequestOptions.circleCropTransform())
             .into(avatar)
         username.text = user.login
-        deleteButton.setOnClickListener { callback.onClickDelete(user) }
+        deleteButton.setOnClickListener{ callback.onClickDelete(user) }
     }
 
 }
