@@ -50,12 +50,17 @@ dependencies {
     implementation(libs.androidx.appcompat)
     implementation(libs.material)
     implementation (libs.glide)
-    annotationProcessor ("com.github.bumptech.glide:compiler:4.12.0")
+    implementation(libs.androidx.espresso.contrib)
+    implementation(libs.androidx.junit.ktx)
+    annotationProcessor (libs.compiler)
     implementation(libs.androidx.activity)
     implementation(libs.androidx.constraintlayout)
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
+    androidTestImplementation(libs.androidx.espresso.contrib)
+    androidTestImplementation(libs.androidx.rules)
+
     //implementation("com.github.jinatonic:confetti:1.0.0")
 
 }
