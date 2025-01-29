@@ -55,4 +55,12 @@ class UserRepositoryTest {
         userRepository.deleteUser(userToDelete)
         Assert.assertFalse(userRepository.getUsers().contains(userToDelete))
     }
+
+    @Test
+    fun setActiveInactiveWithSuccess() {
+        val user = userRepository.getUsers()[0]
+        val isActive = user.isActive
+        userRepository.setActiveInactive(user)
+        Assert.assertNotEquals(isActive, user.isActive)
+    }
 }
