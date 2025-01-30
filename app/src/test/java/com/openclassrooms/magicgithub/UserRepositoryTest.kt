@@ -63,4 +63,13 @@ class UserRepositoryTest {
         userRepository.setActiveInactive(user)
         Assert.assertNotEquals(isActive, user.isActive)
     }
+
+    @Test
+    fun swapUsersWithSuccess() {
+        val user1 = userRepository.getUsers()[0]
+        val user2 = userRepository.getUsers()[1]
+        userRepository.swapUsers(0, 1)
+        assertEquals(userRepository.getUsers()[0], user2)
+        assertEquals(userRepository.getUsers()[1], user1)
+    }
 }

@@ -19,6 +19,10 @@ class UserRepository(
     }
 
     fun setActiveInactive(user: User) {
-        user.isActive = !user.isActive
+        apiService.setActiveInactive(user)
+    }
+
+    fun swapUsers(from: Int, to: Int) {
+        apiService.swapUsers(from, to)
     }
 }

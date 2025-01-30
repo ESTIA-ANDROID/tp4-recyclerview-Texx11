@@ -22,7 +22,7 @@ class UserListAdapter(  // FOR CALLBACK ---
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ListUserViewHolder {
         val inflater = LayoutInflater.from(parent.context)
         val binding = ItemListUserBinding.inflate(inflater, parent, false)
-        return ListUserViewHolder(binding.root)
+        return ListUserViewHolder(binding)
     }
 
     override fun onBindViewHolder(holder: ListUserViewHolder, position: Int) {
@@ -31,6 +31,10 @@ class UserListAdapter(  // FOR CALLBACK ---
 
     override fun getItemCount(): Int {
         return users.size
+    }
+
+    fun getItem(position: Int): User {
+        return users[position]
     }
 
     //PUBLIC API ---

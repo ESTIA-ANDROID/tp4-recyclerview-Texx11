@@ -32,6 +32,17 @@ class FakeApiService : ApiService {
      * Set a [User] active or inactive.
      */
     override fun setActiveInactive(user: User) {
-        user.isActive = !user.isActive
+        val newUser = user.copy(isActive = !user.isActive)
+        val position = _users.indexOf(user)
+        _users[position] = newUser
+    }
+
+    /**
+     * Swap two [User] in the [FakeApiService.users] list.
+     */
+    override fun swapUsers(from: Int, to: Int) {
+        val userFrom = _users[from]
+        _users[from] = _users[to]
+        _users[to] = userFrom
     }
 }
